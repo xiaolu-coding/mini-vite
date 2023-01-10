@@ -37,3 +37,15 @@ export async function startDevServer() {
 }
 
 ```
+
+开发依赖预构建功能
+
+> 确定预构建入口 首先是确定入口，为了方便理解，这里我直接约定为 src 目录下的main.tsx文件:
+
+```ts
+// 需要引入的依赖
+import path from "path";
+
+// 1. 确定入口
+const entry = path.resolve(root, "src/main.tsx");
+```
