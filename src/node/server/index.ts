@@ -8,6 +8,7 @@ import { resolvePlugins } from "../plugins"
 import { Plugin } from "../plugin"
 import { createPluginContainer, PluginContainer } from "../pluginContainer"
 import { indexHtmlMiddware } from "./middlewares/indexHtml"
+import { transformMiddleware } from "./middlewares/transform"
 
 // 增加如下类型声明
 export interface ServerContext {
@@ -35,6 +36,9 @@ export async function startDevServer() {
       await plugin.configureServer(serverContext)
     }
   }
+
+  // // 核心编译逻辑
+  app.use(transformMiddleware(serverContext))
 
   // 处理入口 HTML 资源
   app.use(indexHtmlMiddware(serverContext))

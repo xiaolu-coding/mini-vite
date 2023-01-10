@@ -4,12 +4,11 @@ import React from "react";
 // import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
-
+  const [count, setCount] = useState(0)
+  // <img className="App-logo" src={logo} alt="" />
   return (
     <div className="App">
       <header className="App-header">
-        {/* <img className="App-logo" src={logo} alt="" /> */}
         <p>Hello Vite + React</p>
         <p>
           <button type="button" onClick={() => setCount((count) => count + 1)}>
@@ -40,7 +39,7 @@ function App() {
         </p>
       </header>
     </div>
-  );
+  )
 }
 
 export default App;
