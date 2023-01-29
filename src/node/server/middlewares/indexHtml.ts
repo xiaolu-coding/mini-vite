@@ -21,7 +21,7 @@ export function indexHtmlMiddware(
           }
         }
 
-        res.statusCode = 200
+        res.statusCode = 200 
         res.setHeader("Content-Type", "text/html")
         return res.end(html)
       }
